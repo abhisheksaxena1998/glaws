@@ -130,8 +130,13 @@ def register():
         #pickle.dump(model, open(filename, 'wb'))
         load_lr_model =pickle.load(open(filename, 'rb'))
         #print (load_lr_model.predict(vect.transform([tr])))'''
+        
+        if arg[0]=='for':
+            t='Pro-Gun'
+        else:
+            t='Anti-Gun'
 
 
     #return flask.render_template('result.html',prediction=flairs[int(load_lr_model.predict(vect.transform([processed_tweet])))],url=mm)
-    return flask.render_template('result.html',prediction=arg[0],url=mm)
+    return flask.render_template('result.html',prediction=t,url=mm)
         
